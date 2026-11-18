@@ -1,0 +1,27 @@
+name: Tests
+
+on: push
+
+permissions:
+  contents: read
+
+jobs:
+  go:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      - run: go test ./...
+
+  php:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - name: Run PHP tests
+        shell: bash
+        run: |
+          for test_file in problems/*/SolutionTest.php; do
+            php "$test_file"
+          done

@@ -1,0 +1,11 @@
+id: 1
+title: Two Sum
+slug: two-sum
+difficulty: easy
+patterns:
+  - hash-map
+solved_at: null
+time_complexity: O(n)
+space_complexity: O(n)
+leetcode_url: https://leetcode.com/problems/two-sum/
+status: solved
